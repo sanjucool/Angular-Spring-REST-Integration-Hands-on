@@ -1,0 +1,55 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!-- <div class="container">
+    <div class="row">
+               <div id="custom-search-input">
+                                <div class="input-group col-md-12" style="text-align: center">
+                                    <input type="text" class="search-query form-control" placeholder="Search With Employee id"  name="id" [(ngModel)]="id"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="button" (click)="getEmployeeById()">
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+    </div>
+    </div> -->
+<div class="container">
+    <div class="row col-md-8 col-md-offset-2 custyle">
+        <h1 class="text-primary">Employee Details</h1>
+        <button class="btn btn-primary" (click)="onclick()"> Add Employee</button>
+    <table class="table table-striped table-bordered" style="margin-top: 5px;">
+    <thead>
+        <tr>
+            <th>EmployeeId</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.age}}</td>
+            <td>{{employee.salary}}</td>
+            <td class="text-center">
+                <button class="btn bg-transparent btn-link" (click)="openDeleteEmployee(employee.id)">Delete</button>
+                <span>|</span>
+                <button class="btn bg-transparent btn-link" (click)="openUdateteEmployee(employee)">Update</button>
+            </td>
+          </tr>
+    </tbody>
+    </table>
+    </div>
+</div>
+
+
+

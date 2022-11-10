@@ -1,0 +1,64 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="text-primary">Update Employee</h1>
+            
+            <form>
+                <fieldset>
+
+                    <div class="form-group">
+                        <label for="id">Employee Id</label>
+                        <input required type="text" [(ngModel)]="employee.id" name="id" id="id"
+                            class="form-control phone" maxlength="28" placeholder="Enter EmployeeId" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input required type="text" [(ngModel)]="employee.name" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter your fullname" />
+                    </div>
+
+                    <div class="form-group" style="display: flex;column-gap: 6px; margin-left: -7px;">
+                        <label for="gender">Gender</label>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="gender" [(ngModel)]="employee.gender" name="gender" value="male" mdbInput>
+                            <label class="form-check-label" for="materialInline2">male</label>
+
+                        </div>
+                        
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="gender" [(ngModel)]="employee.gender" value="female" name="gender" mdbInput>
+                            <label class="form-check-label" for="materialInline2">female</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input class="form-control" type="text" [(ngModel)]="employee.age" name="age" id="txt"
+                            placeholder="enter age" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="salary"> Salary </label>
+                        <input class="form-control" required type="text" [(ngModel)]="employee.salary" name="salary"
+                            id="email" placeholder="enter salary" />
+                        <div class="status" id="status"></div>
+                    </div>
+                    <div class="form-group" style="display: flex; column-gap: 10px;">
+                        <input class="btn btn-primary" type="submit" name="submit_reg" value="Update" (click)="update()">
+                        <input class="btn btn-primary" type="submit" name="cancel" value="Cancel" (click)="cancel()">
+                    </div>
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+
+    </div>
+</div>
+
+
